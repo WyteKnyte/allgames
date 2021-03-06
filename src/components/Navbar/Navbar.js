@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {FaBars, FaTimes} from 'react-icons/fa'
-import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, NavLinks, NavItemBtn, NavBtnLink } from './Style'
+import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, NavLinks} from './Style'
 import {IconContext} from 'react-icons/lib'
-import { Button } from '../../globalStyles'
 const Navbar = ( ) => {
     const [click, setClick] = useState(false)
     const [button, setButton] = useState(true)
@@ -37,17 +36,17 @@ const Navbar = ( ) => {
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='/'>
+                            <NavLinks to='/search-game'>
                                 Search Game
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='/'>
+                            <NavLinks to='/popular-games'>
                                 Popular Games
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='/'>
+                            <NavLinks to='/about-us'>
                                 About Us
                             </NavLinks>
                         </NavItem>
