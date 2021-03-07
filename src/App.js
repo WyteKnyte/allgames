@@ -14,9 +14,15 @@ function App() {
       <Navbar />
       <Switch>
         <Route path='/' exact component={Home} />
-        <Route path='/search-games' component={SearchGames} />
-        <Route path='/popular-games' component={PopularGames} />
-        <Route path='/about-us' component={AboutUs} />
+        <Route path='/search-game'>
+          <SearchGames/>
+        </Route>
+        <Route path='/about-us'>
+          <AboutUs/>
+        </Route>
+        <Route path={["/game/:id", "/"]}>
+        <PopularGames/>
+        </Route>
       </Switch>
     </Router>
   );

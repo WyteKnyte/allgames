@@ -10,7 +10,7 @@ export const homeObjOne = {
       'You can find detailed information about each game you are looking for.',
     buttonLabel: "Let's Try",
     imgStart: '',
-    img: require('../../images/gameboy-monochrome.svg').default,
+    img: require('../../img/gameboy-monochrome.svg').default,
     alt: 'Games',
     start: '',
     isSearchGames: 'true'
@@ -29,7 +29,7 @@ export const homeObjTwo = {
     "You can access the most popular games by week, month, year.",
   buttonLabel: 'Look Now',
   imgStart: 'true',
-  img: require('../../images/gamer-monochrome.svg').default,
+  img: require('../../img/gamer-monochrome.svg').default,
   alt: 'Vault',
   start: '',
   isPopularGames: 'true'
@@ -47,7 +47,7 @@ export const homeObjTwo = {
     description:
       "We are using the Rawg.io API. Thus, you can access the information of the game you want on our site.",
     imgStart: '',
-    img: require('../../images/drawkit-support-woman-monochrome.svg').default,
+    img: require('../../img/drawkit-support-woman-monochrome.svg').default,
     alt: 'Games',
     start: '',
     isValidButton: 0

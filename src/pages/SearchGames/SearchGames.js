@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SearchGames() {
+const SearchGames= () => {
   return (
     <>
       <h2>Very soon</h2>
