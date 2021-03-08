@@ -5,7 +5,7 @@ import GlobalStyle from './globalStyles'
 import Home from './pages/HomePage/Home';
 import SearchGames from './pages/SearchGames/SearchGames';
 import PopularGames from './pages/PopularGames/PopularGames';
-import AboutUs from './pages/AboutUs/AboutUs';
+import NewGames from './pages/NewGames/NewGames';
 
 function App() {
   return (
@@ -14,14 +14,17 @@ function App() {
       <Navbar />
       <Switch>
         <Route path='/' exact component={Home} />
+
         <Route path='/search-game'>
           <SearchGames/>
         </Route>
-        <Route path='/about-us'>
-          <AboutUs/>
-        </Route>
-        <Route path={["/game/:id", "/"]}>
+
+        <Route path={["/game/:id", "/popular-games"]}>
         <PopularGames/>
+        </Route>
+
+        <Route path={["/game/:id", "/new-games"]}>
+          <NewGames/>
         </Route>
       </Switch>
     </Router>

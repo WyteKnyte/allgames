@@ -34,8 +34,8 @@ const Navbar = ( ) => {
                             </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='/about-us'>
-                                About Us
+                            <NavLinks to='/new-games'>
+                                New Games
                             </NavLinks>
                         </NavItem>
                     </NavMenu>

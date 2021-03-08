@@ -2,7 +2,7 @@ import React from 'react';
 import { homeObjOne, homeObjTwo, homeObjThree } from './Data';
 import { InfoSection } from '../../components';
 
-function Home() {
+const Home = () => {
   return (
     <>
       <InfoSection {...homeObjOne} />

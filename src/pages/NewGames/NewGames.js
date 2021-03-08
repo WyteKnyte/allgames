@@ -8,12 +8,9 @@ import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import { fadeIn } from "../../animations";
 
-
 const NewGames = () => {
   const location = useLocation();
-  const whichPage = location.pathname;
   const pathId = location.pathname.split("/")[2];
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadGames());
@@ -22,15 +19,16 @@ const NewGames = () => {
     (state) => state.games
   );
 
+
   return (
-        <GameList variants={fadeIn} initial="hidden" animate="show">
-        <AnimateSharedLayout type="crossfade">
+    <GameList variants={fadeIn} initial="hidden" animate="show">
+        <AnimateSharedLayout>
         <AnimatePresence>
           {pathId && <GameDetail pathId={pathId} />}
         </AnimatePresence>
-        <h2 style={{textAlign: "center"}}>Popular Games</h2>
+        <h2 style={{textAlign: "center"}}>New Games</h2>
         <Games>
-          {popular.map((game) => (
+          {newGames.map((game) => (
             <Game
               name={game.name}
               released={game.released}
@@ -40,8 +38,7 @@ const NewGames = () => {
             />
           ))}
         </Games>
-        
-      </AnimateSharedLayout>
+        </AnimateSharedLayout>
     </GameList>
   );
 }
