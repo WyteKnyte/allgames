@@ -10,7 +10,7 @@ import {
   Heading,
   Subtitle,
   ImgWrapper,
-  Img
+  Img,
 } from './Style';
 function InfoSection({
   primary,
@@ -27,8 +27,7 @@ function InfoSection({
   imgStart,
   start,
   isSearchGames,
-  isPopularGames
-  
+  isPopularGames,
 }) {
   return (
     <>
@@ -40,20 +39,20 @@ function InfoSection({
                 <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
-                {isSearchGames &&
-                <Link to='/search-game'>               
-                  <Button big fontBig primary={primary}>
-                    {buttonLabel}
-                  </Button>
-                </Link>
-                }
-                {isPopularGames &&
-                <Link to='/popular-games'>               
-                  <Button big fontBig primary={primary}>
-                    {buttonLabel}
-                  </Button>
-                </Link>
-                }
+                {isSearchGames && (
+                  <Link to='/search-game'>
+                    <Button big fontBig primary={primary}>
+                      {buttonLabel}
+                    </Button>
+                  </Link>
+                )}
+                {isPopularGames && (
+                  <Link to='/popular-games'>
+                    <Button big fontBig primary={primary}>
+                      {buttonLabel}
+                    </Button>
+                  </Link>
+                )}
               </TextWrapper>
             </InfoColumn>
             <InfoColumn>

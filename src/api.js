@@ -1,8 +1,8 @@
 import date from 'date-and-time';
 
-const base_url = "https://api.rawg.io/api/";
+const base_url = 'https://api.rawg.io/api/';
 const now = new Date();
-const currentMonth = date.format(now, 'MM'); 
+const currentMonth = date.format(now, 'MM');
 const currentDay = date.format(now, 'DD');
 const currentYear = date.format(now, 'Y');
 
@@ -17,5 +17,7 @@ export const popularGamesURL = () => `${base_url}${popular_games}`;
 export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
 export const newGamesURL = () => `${base_url}${newGames}`;
 export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}`;
-export const gameScreenshotURL = (game_id) => `${base_url}games/${game_id}/screenshots`;
-export const searchGameURL = (game_name) => `${base_url}games?search=${game_name}&page_size=9`;
+export const gameScreenshotURL = (game_id) =>
+  `${base_url}games/${game_id}/screenshots`;
+export const searchGameURL = (game_name) =>
+  `${base_url}games?search=${game_name}&page_size=9`;

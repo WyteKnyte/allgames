@@ -1,34 +1,37 @@
-import React from "react";
+import React from 'react';
 //Styling and Animation
-import styled from "styled-components";
-import { motion } from "framer-motion";
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 //Redux
-import { useDispatch } from "react-redux";
-import { loadDetail } from "../actions/detailAction";
-import { Link } from "react-router-dom";
-import { smallImage } from "../util";
-import { popup } from "../animations";
+import { useDispatch } from 'react-redux';
+import { loadDetail } from '../actions/detailAction';
+import { Link } from 'react-router-dom';
+import { smallImage } from '../util';
+import { popup } from '../animations';
 
 const Game = ({ name, released, image, id }) => {
   const stringPathId = id.toString();
   //Load Detail Handler
   const dispatch = useDispatch();
   const loadDetailHandler = () => {
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = 'hidden';
     dispatch(loadDetail(id));
   };
 
   return (
     <StyledGame
       variants={popup}
-      initial="hidden"
-      animate="show"
+      initial='hidden'
+      animate='show'
       layoutId={stringPathId}
       onClick={loadDetailHandler}
     >
       <Link to={`/game/${id}`}>
         <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
-        <p><b>Release Date: </b>{released}</p>
+        <p>
+          <b>Release Date: </b>
+          {released}
+        </p>
         <motion.img
           layoutId={`image ${stringPathId}`}
           src={smallImage(image, 640)}

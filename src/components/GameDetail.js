@@ -1,25 +1,25 @@
-import React from "react";
-import styled from "styled-components";
-import { motion } from "framer-motion";
-import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { smallImage } from "../util";
-import playstation from "../img/playstation.svg";
-import steam from "../img/steam.svg";
-import xbox from "../img/xbox.svg";
-import nintendo from "../img/nintendo.svg";
-import apple from "../img/apple.svg";
-import gamepad from "../img/gamepad.svg";
-import starEmpty from "../img/star-empty.png";
-import starFull from "../img/star-full.png";
+import React from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { smallImage } from '../util';
+import playstation from '../img/playstation.svg';
+import steam from '../img/steam.svg';
+import xbox from '../img/xbox.svg';
+import nintendo from '../img/nintendo.svg';
+import apple from '../img/apple.svg';
+import gamepad from '../img/gamepad.svg';
+import starEmpty from '../img/star-empty.png';
+import starFull from '../img/star-full.png';
 
 const GameDetail = ({ pathId }) => {
   const history = useHistory();
   //Exit Detail
   const exitDetailHander = (e) => {
     const element = e.target;
-    if (element.classList.contains("shadow")) {
-      document.body.style.overflow = "auto";
+    if (element.classList.contains('shadow')) {
+      document.body.style.overflow = 'auto';
       history.goBack();
     }
   };
@@ -29,9 +29,9 @@ const GameDetail = ({ pathId }) => {
     const rating = Math.floor(game.rating);
     for (let i = 1; i <= 5; i++) {
       if (i <= rating) {
-        stars.push(<img alt="star" key={i} src={starFull}></img>);
+        stars.push(<img alt='star' key={i} src={starFull}></img>);
       } else {
-        stars.push(<img alt="star" key={i} src={starEmpty}></img>);
+        stars.push(<img alt='star' key={i} src={starEmpty}></img>);
       }
     }
     return stars;
@@ -39,15 +39,15 @@ const GameDetail = ({ pathId }) => {
 
   const getPlatform = (platform) => {
     switch (platform) {
-      case "PlayStation 4":
+      case 'PlayStation 4':
         return playstation;
-      case "Xbox One":
+      case 'Xbox One':
         return xbox;
-      case "PC":
+      case 'PC':
         return steam;
-      case "Nintendo Switch":
+      case 'Nintendo Switch':
         return nintendo;
-      case "iOS":
+      case 'iOS':
         return apple;
       default:
         return gamepad;
@@ -58,10 +58,10 @@ const GameDetail = ({ pathId }) => {
   return (
     <>
       {!isLoading && (
-        <CardShadow className="shadow" onClick={exitDetailHander}>
+        <CardShadow className='shadow' onClick={exitDetailHander}>
           <Detail layoutId={pathId}>
             <Stats>
-              <div className="rating">
+              <div className='rating'>
                 <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
                 <p>Rating: {game.rating}</p>
                 {getStars()}
@@ -89,7 +89,7 @@ const GameDetail = ({ pathId }) => {
             <Description>
               <p>{game.description_raw}</p>
             </Description>
-            <div className="gallery">
+            <div className='gallery'>
               {screen.results.map((screen) => (
                 <img
                   src={smallImage(screen.image, 1280)}

@@ -1,7 +1,7 @@
-import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Navbar } from './components'
-import GlobalStyle from './globalStyles'
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Navbar } from './components';
+import GlobalStyle from './globalStyles';
 import Home from './pages/HomePage/Home';
 import SearchGames from './pages/SearchGames/SearchGames';
 import PopularGames from './pages/PopularGames/PopularGames';
@@ -16,15 +16,15 @@ function App() {
         <Route path='/' exact component={Home} />
 
         <Route path='/search-game'>
-          <SearchGames/>
+          <SearchGames />
         </Route>
 
-        <Route path={["/game/:id", "/popular-games"]}>
-        <PopularGames/>
+        <Route path={['/game/:id', '/popular-games']}>
+          <PopularGames />
         </Route>
 
-        <Route path={["/game/:id", "/new-games"]}>
-          <NewGames/>
+        <Route path={['/game/:id', '/new-games']}>
+          <NewGames />
         </Route>
       </Switch>
     </Router>
