@@ -28,9 +28,7 @@ const SearchGames = () => {
     dispatch(fetchSearch(textInput));
     setTextInput('');
   };
-  const clearSearched = () => {
-    dispatch({ type: 'CLEAR_SEARCHED' });
-  };
+
   return (
     <>
       <StyledNav variants={fadeIn} initial='hidden' animate='show'>

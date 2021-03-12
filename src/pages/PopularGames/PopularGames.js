@@ -10,14 +10,13 @@ import { fadeIn } from '../../animations';
 
 const NewGames = () => {
   const location = useLocation();
-  const whichPage = location.pathname;
   const pathId = location.pathname.split('/')[2];
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadGames());
   }, [dispatch]);
-  const { popular, upcoming, newGames } = useSelector((state) => state.games);
+  const { popular } = useSelector((state) => state.games);
 
   return (
     <GameList variants={fadeIn} initial='hidden' animate='show'>
