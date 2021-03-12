@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Navbar } from './components';
+import { Navbar, Footer } from './components';
 import GlobalStyle from './globalStyles';
 import Home from './pages/HomePage/Home';
 import SearchGames from './pages/SearchGames/SearchGames';
@@ -27,6 +27,7 @@ function App() {
           <NewGames />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }
