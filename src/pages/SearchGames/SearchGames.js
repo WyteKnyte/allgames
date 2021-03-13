@@ -9,6 +9,7 @@ import { useLocation } from 'react-router-dom';
 import { fadeIn } from '../../animations';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import Navbar from '../../components/Navbar/Navbar';
 
 const SearchGames = () => {
   const location = useLocation();
@@ -31,6 +32,7 @@ const SearchGames = () => {
 
   return (
     <>
+      {!pathId && <Navbar />}
       <StyledNav variants={fadeIn} initial='hidden' animate='show'>
         <form className='search'>
           <input value={textInput} onChange={inputHandler} type='text' />
@@ -46,7 +48,7 @@ const SearchGames = () => {
           </AnimatePresence>
           {searched.length ? (
             <div className='searched'>
-              <h2>Searched Games</h2>
+              <h2 style={{ textAlign: 'center' }}>Searched Games</h2>
               <Games>
                 {searched.map((game) => (
                   <Game

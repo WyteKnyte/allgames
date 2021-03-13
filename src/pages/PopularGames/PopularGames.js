@@ -7,7 +7,7 @@ import { Games, GameList } from '../../globalStyles';
 import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import { fadeIn } from '../../animations';
-
+import Navbar from '../../components/Navbar/Navbar';
 const NewGames = () => {
   const location = useLocation();
   const pathId = location.pathname.split('/')[2];
@@ -19,25 +19,28 @@ const NewGames = () => {
   const { popular } = useSelector((state) => state.games);
 
   return (
-    <GameList variants={fadeIn} initial='hidden' animate='show'>
-      <AnimateSharedLayout type='crossfade'>
-        <AnimatePresence>
-          {pathId && <GameDetail pathId={pathId} />}
-        </AnimatePresence>
-        <h2 style={{ textAlign: 'center' }}>Popular Games</h2>
-        <Games>
-          {popular.map((game) => (
-            <Game
-              name={game.name}
-              released={game.released}
-              id={game.id}
-              image={game.background_image}
-              key={game.id}
-            />
-          ))}
-        </Games>
-      </AnimateSharedLayout>
-    </GameList>
+    <>
+      {!pathId && <Navbar />}
+      <GameList variants={fadeIn} initial='hidden' animate='show'>
+        <AnimateSharedLayout type='crossfade'>
+          <AnimatePresence>
+            {pathId && <GameDetail pathId={pathId} />}
+          </AnimatePresence>
+          <h2 style={{ textAlign: 'center' }}>Popular Games</h2>
+          <Games>
+            {popular.map((game) => (
+              <Game
+                name={game.name}
+                released={game.released}
+                id={game.id}
+                image={game.background_image}
+                key={game.id}
+              />
+            ))}
+          </Games>
+        </AnimateSharedLayout>
+      </GameList>
+    </>
   );
 };
 
