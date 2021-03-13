@@ -6,11 +6,12 @@ import Home from './pages/HomePage/Home';
 import SearchGames from './pages/SearchGames/SearchGames';
 import PopularGames from './pages/PopularGames/PopularGames';
 import NewGames from './pages/NewGames/NewGames';
-
+import ScrollToTop from './components/ScrollToTop';
 function App() {
   return (
     <Router>
       <GlobalStyle />
+      <ScrollToTop />
       <Navbar />
       <Switch>
         <Route path='/' exact component={Home} />
